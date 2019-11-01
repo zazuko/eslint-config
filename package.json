@@ -1,0 +1,42 @@
+{
+  "name": "@zazuko/eslint-config",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "release": "standard-version"
+  },
+  "peerDependencies": {
+    "eslint": ">=6",
+    "@typescript-eslint/eslint-plugin": ">=2",
+    "@typescript-eslint/parser": ">=2",
+    "standard": ">=11"
+  },
+  "devDependencies": {
+    "husky": "^1.0.0",
+    "standard-version": "^7.0.0",
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zazuko/eslint-config.git"
+  },
+  "keywords": [
+    "eslint"
+  ],
+  "author": "Zazuko GmbH",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zazuko/eslint-config/issues"
+  },
+  "homepage": "https://github.com/zazuko/eslint-config#readme",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": ["@commitlint/config-conventional"]
+  }
+}
