@@ -13,6 +13,9 @@
     "standard": ">=11"
   },
   "devDependencies": {
+    "eslint": "^6.6.0",
+    "standard": "^14.3.1",
+    "lint-staged": "^9.4.2",
     "husky": "^1.0.0",
     "standard-version": "^7.0.0",
     "@commitlint/cli": "^8.0.0",
@@ -33,10 +36,19 @@
   "homepage": "https://github.com/zazuko/eslint-config#readme",
   "husky": {
     "hooks": {
+      "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix --quiet",
+      "git add"
+    ]
+  },
   "commitlint": {
-    "extends": ["@commitlint/config-conventional"]
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
